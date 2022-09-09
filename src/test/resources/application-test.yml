@@ -1,0 +1,19 @@
+#
+# application-test.yml
+#
+
+# levels: off fatal error warn info debug trace all
+logging:
+  level:
+    root: warn
+    io:
+      github:
+        bonigarcia:
+          wdm: info
+    org:
+      openqa:
+        selenium: info
+    com:
+      example:
+        wordle:
+          element: warn
