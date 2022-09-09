@@ -15,8 +15,7 @@
         <maven-war-plugin.version>3.3.2</maven-war-plugin.version>
         <maven-failsafe-plugin.version>2.22.2</maven-failsafe-plugin.version>
 
-        <vaadin-flow.version>23.1.7</vaadin-flow.version>
-        <vaadin.testbench.version>8.0.2</vaadin.testbench.version>
+        <vaadin-flow.version>23.2.0</vaadin-flow.version>
 
         <webdrivermanager.version>5.3.0</webdrivermanager.version>
         <testng.version>7.6.1</testng.version>
@@ -42,12 +41,40 @@
                 <version>${webdrivermanager.version}</version>
                 <scope>test</scope>
             </dependency>
+                    <dependency>
+                        <!-- transitive dependency override for webdrivermanager -->
+                        <groupId>com.fasterxml.jackson.core</groupId>
+                        <artifactId>jackson-databind</artifactId>
+                        <version>2.13.4</version>
+                        <scope>test</scope>
+                    </dependency>
+                    <dependency>
+                        <!-- transitive dependency override for webdrivermanager -->
+                        <groupId>commons-io</groupId>
+                        <artifactId>commons-io</artifactId>
+                        <version>2.11.0</version>
+                        <scope>test</scope>
+                    </dependency>
+                    <dependency>
+                        <!-- transitive dependency override for webdrivermanager -->
+                        <groupId>org.bouncycastle</groupId>
+                        <artifactId>bcprov-jdk15on</artifactId>
+                        <version>1.70</version>
+                        <scope>test</scope>
+                    </dependency>
             <dependency>
                 <groupId>org.testng</groupId>
                 <artifactId>testng</artifactId>
                 <version>${testng.version}</version>
                 <scope>test</scope>
             </dependency>
+                    <dependency>
+                        <!-- transitive dependency override for testng -->
+                        <groupId>org.webjars</groupId>
+                        <artifactId>jquery</artifactId>
+                        <version>3.6.1</version>
+                        <scope>test</scope>
+                    </dependency>
             <dependency>
                 <groupId>org.assertj</groupId>
                 <artifactId>assertj-core</artifactId>
@@ -89,39 +116,11 @@
             <artifactId>webdrivermanager</artifactId>
             <scope>test</scope>
         </dependency>
-                <dependency>
-                    <!-- transitive dependency for webdrivermanager -->
-                    <groupId>com.fasterxml.jackson.core</groupId>
-                    <artifactId>jackson-databind</artifactId>
-                    <version>2.13.4</version>
-                    <scope>test</scope>
-                </dependency>
-                <dependency>
-                    <!-- transitive dependency for webdrivermanager -->
-                    <groupId>commons-io</groupId>
-                    <artifactId>commons-io</artifactId>
-                    <version>2.11.0</version>
-                    <scope>test</scope>
-                </dependency>
-                <dependency>
-                    <!-- transitive dependency for webdrivermanager -->
-                    <groupId>org.bouncycastle</groupId>
-                    <artifactId>bcprov-jdk15on</artifactId>
-                    <version>1.70</version>
-                    <scope>test</scope>
-                </dependency>
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <scope>test</scope>
         </dependency>
-                <dependency>
-                    <!-- transitive dependency for testng -->
-                    <groupId>org.webjars</groupId>
-                    <artifactId>jquery</artifactId>
-                    <version>3.6.1</version>
-                    <scope>test</scope>
-                </dependency>
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
